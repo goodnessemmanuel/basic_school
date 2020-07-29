@@ -8,13 +8,11 @@ import java.util.List;
  */
 public class Principal extends Staff
 {
-    private final Staff staff;
-    private final List<Student> students;
+    private List<Student> students;
 
     public Principal(Staff staff)
     {
         super(staff.getId(), staff.getFirstName(), staff.getLastName(), staff.getGender(), staff.getDateOfBirth());
-        this.staff = staff;
         students = School.getStudents();
     }
 
@@ -28,11 +26,13 @@ public class Principal extends Staff
        return students;
     }
 
-    public void expelStudent(List<Student> studentsToExpel)
+    public List<Student> expelStudent(List<Student> studentsToExpel)
     {
-        for (Student studentToExpel : studentsToExpel) {
+        for (Student studentToExpel : studentsToExpel)
+        {
             students.removeIf(student -> student.getId() == studentToExpel.getId());
         }
+        return students;
     }
 
     /**
@@ -61,8 +61,4 @@ public class Principal extends Staff
         return students;
     }
 
-    public Staff getAppointedStaff()
-    {
-        return staff;
-    }
 }

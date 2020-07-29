@@ -25,11 +25,12 @@ public class MainApp {
         //print detail to confirm
         System.out.println(callStaff.getFirstName() + ", " + callStaff.getLastName());
 
-        //Appoint principal by calling appointprincipal() method which takes a staff
+        //Appoint principal by calling appointPrincipal() method which takes a staff
         school.appointPrincipal(callStaff);
 
         //call the appointed principal of the school
         Principal principal = school.getPrincipal();
+        System.out.println("this is head : " + principal.getFirstName());
 
         //to add students you have to create a list of applicants seeking admission to the school
         List<Applicant> applicants = new ArrayList<>();
@@ -40,17 +41,14 @@ public class MainApp {
         applicants.add(new Applicant(2, "Jane", "Gibson", "Female", "7/7/2010",
                 "10 gibson way", "07067418830", new Class("Jss1")));
 
-        //call the admit new students of school and pass the applicants
-        school.admitNewStudents(applicants);
-
-        //if principal admits the student you can now call the using getStudents method
-        List<Student> students = School.getStudents();
+        //principal can admit new students, expel students et al
+        List<Student> students = principal.admitStudents(applicants);
 
         //loop through to check if applicants were all accepted
         for (Student student : students)
         {
             System.out.printf("%d %s %s %s %s %s%n", student.getId(), student.getFirstName(), student.getLastName(),
-            student.getDateOfBirth(), student.getGender(), student.getStudentClass());
+            student.getDateOfBirth(), student.getGender(), student.getClassName());
         }
 
     }

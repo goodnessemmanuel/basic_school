@@ -23,6 +23,7 @@ public abstract class Person
         this.lastName = lastName;
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
+        computeAge(dateOfBirth);
     }
 
     public String getFirstName()

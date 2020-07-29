@@ -50,10 +50,26 @@ public class School
     }
 
     //adding one staff
-    public void addStaff(Staff staff)
+    public void addStaff(Staff newStaff)
     {
-        staffs.add(staff);
+        if(!staffIdExist(newStaff))
+        {
+            staffs.add(newStaff);
+        }
     }
+    //check identity staff id
+    public boolean staffIdExist(Staff newStaff)
+    {
+        for (Staff staff: staffs)
+        {
+            if(staff.getId() == newStaff.getId())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     //adding more than one staff
     public void addStaff(List<Staff> staffsToAdd)
     {
@@ -65,14 +81,15 @@ public class School
         return students;
     }
 
-    public void admitNewStudents(List<Applicant> applicants)
+    public List<Student> admitNewStudents(List<Applicant> applicants)
     {
-        System.out.println("I was here");
         if(applicants != null && principal != null)
         {
            students = principal.admitStudents(applicants);
         }
+        return students;
     }
+
     public Principal getPrincipal()
     {
         return principal;
@@ -82,5 +99,4 @@ public class School
     {
         this.principal = new Principal(staff);
     }
-
 }

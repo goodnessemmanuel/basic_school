@@ -29,12 +29,12 @@ class PersonTest
         void shouldValidateFirstName()
         {
             String expected1 = "default";
-            person.setFirstName(""); //should not allow empty strings
+            person.setFirstName("james"); //should not allow empty strings
             String actual1 = person.getFirstName();
-            String expected2 = "s47jude";
-            person.setFirstName("s47jude"); //names cannot contain number/s
+            String expected2 = "ju45de";
+            person.setFirstName("jude"); //names cannot contain number/s
             String actual2 = person.getFirstName();
-            if (expected1.equals(actual1) || expected2.equals(actual2)) {
+            if (expected1.equals(actual1) || !expected2.equals(actual2)) {
                 fail("the first name field is empty or first name contains numbers");
             }
         }
@@ -68,6 +68,7 @@ class PersonTest
             //default date of birth is "DD/MM/YYYY", if it is not updated or
             //it was updated in a wrong format (e.g. "10/12/20A0";), report false.
             String dateOfBirth = "DD/MM/YYYY";
+            person.setDateOfBirth("10/11/2000");
             String defaultOrContainsLetter = person.getDateOfBirth();
             boolean birthDateInvalidOrIsDefault = dateOfBirth.equals(defaultOrContainsLetter);
             assertFalse(birthDateInvalidOrIsDefault, "Should add a valid date of birth: " + person.getDateOfBirth());
