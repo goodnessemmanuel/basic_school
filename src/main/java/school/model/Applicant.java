@@ -25,8 +25,8 @@ public class Applicant extends Person
     }
 
     //this private constructor is use to set applicant's default value when call to the empty constructor is made
-    private Applicant(int id, String firstName, String lastName, String gender, String dateOfBirth,
-                      String address, String phoneNumber, Class applicantClass)
+    Applicant(int id, String firstName, String lastName, String gender, String dateOfBirth,
+              String address, String phoneNumber, Class applicantClass)
     {
         super(firstName, lastName, gender, dateOfBirth);
         this.id = id;

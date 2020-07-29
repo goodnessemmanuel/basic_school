@@ -26,7 +26,13 @@ public class Student extends Person{
         return studentClass;
     }
 
-    public void setStudentClass(Class studentClass) {
+    public String getClassName()
+    {
+        return studentClass.getNameOfClass();
+    }
+
+    public void setStudentClass(Class studentClass)
+    {
         this.studentClass = studentClass;
     }
 

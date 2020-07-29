@@ -36,9 +36,28 @@ public class School
         return staffs;
     }
 
+    public Staff getStaff(int staffId)
+    {
+        Staff targetStaff = null;
+        for (Staff staff : staffs)
+        {
+            if (staffId == staff.getId())
+            {
+                targetStaff = staff;
+            }
+        }
+        return targetStaff;
+    }
+
+    //adding one staff
     public void addStaff(Staff staff)
     {
         staffs.add(staff);
+    }
+    //adding more than one staff
+    public void addStaff(List<Staff> staffsToAdd)
+    {
+        staffs.addAll(staffsToAdd);
     }
 
     public static List<Student> getStudents()
@@ -46,17 +65,15 @@ public class School
         return students;
     }
 
-    public boolean admitNewStudents(List<Applicant> applicants)
+    public void admitNewStudents(List<Applicant> applicants)
     {
+        System.out.println("I was here");
         if(applicants != null && principal != null)
         {
-            principal.admitStudents(applicants);
-            return true;
+           students = principal.admitStudents(applicants);
         }
-        return false;
     }
-
-    public Principal getPrincipal(Staff staff)
+    public Principal getPrincipal()
     {
         return principal;
     }
