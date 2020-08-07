@@ -1,6 +1,10 @@
 package school.model;
 
-public class NonTeacher extends Staff implements StaffType{
+/**
+ * non-academic staffs
+ */
+
+public class NonTeacher extends Staff {
 
     public NonTeacher(int id, String firstName, String lastName, String gender, String dateOfBirth)
     {

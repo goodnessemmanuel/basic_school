@@ -1,8 +1,9 @@
 package school.model;
+
 /**
- * This Applicant class creates a template that models real time applicants of this school.
- * each applicants will have a unique data based on this blue print.
+ * This class responsible for creation of applicants
  */
+
 public class Applicant extends Person
 {
     //declaration of member variables
@@ -11,20 +12,14 @@ public class Applicant extends Person
     private String phoneNumber;
     private Class applicantClass;
 
-    //constructor to initialize each object of this class to default for all applicants at
-
-    /**
-     * If applicant's empty constructor is called for the first time it initialize all
-     * field to default. user can now call the set method to fill applicant's details
-     */
+    //initialize applicants with default information
     public Applicant()
     {
         this(0, "default", "default", "default", "DD/MM/YYYY",
-                "default", "000-000-00000", null); //constructor chaining to reuse code
+                "default", "000-000-00000", null);
 
     }
 
-    //this private constructor is use to set applicant's default value when call to the empty constructor is made
     Applicant(int id, String firstName, String lastName, String gender, String dateOfBirth,
               String address, String phoneNumber, Class applicantClass)
     {
@@ -64,10 +59,9 @@ public class Applicant extends Person
     /**
      * @param phoneNumber should starts at zero with a total of 11 digits
      */
-
     public void setPhoneNumber(String phoneNumber)
     {
-        String phoneRegex = "^[0][1-9]\\d{9}$"; //regex to validate phone number
+        String phoneRegex = "^[0][1-9]\\d{9}$"; //validate phone number
         this.phoneNumber = phoneNumber.matches(phoneRegex) ? phoneNumber : this.phoneNumber;
     }
 

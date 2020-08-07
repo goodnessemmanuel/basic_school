@@ -3,9 +3,12 @@ package school.model;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * this class is responsible for the payment of staff salary
+ */
 public class Salary
 {
-    private StaffLevel staffLevel;
+    private final StaffLevel staffLevel;
 
     public Salary(StaffLevel staffLevel)
     {

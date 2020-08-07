@@ -10,11 +10,10 @@ import static org.junit.jupiter.api.Assertions.assertAll;
  * This ApplicantTest class predetermined by way of assertion, what is expected of the Applicant class
  */
 
-@DisplayName("Test Applicant") //label to describe which test case is currently running
+@DisplayName("Test Applicant") //test description
 class ApplicantTest extends PersonTest {
     private Applicant applicant;
 
-    //use this annotation before each test begins to instantiate the Applicant class
     @BeforeEach
     void init()
     {

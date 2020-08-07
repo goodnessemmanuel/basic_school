@@ -1,7 +1,7 @@
 package school.model;
 import java.util.List;
 
-public class Teacher extends Staff implements StaffType{
+public class Teacher extends Staff {
     //declaration of variables that composes a teacher
     private Course course;
     private Class singleClass;

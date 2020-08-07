@@ -8,15 +8,13 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * course test class used to test expected output of the Course class before actual development
+ * perform unit test for methods in course class
  */
 
 @DisplayName("should add Course and update course") //display this name as test title during run time
 class CourseTest {
     private Course course;
 
-    //use the Before each annotation of the junit life circle to create
-    // an object of Course class during initialization of each test
     @BeforeEach
     void init()
     {
@@ -30,7 +28,7 @@ class CourseTest {
     {
         //check for this multiple test cases
         int expected1 = 0;
-        int actual1 = course.getId(); //test should output default value
+        int actual1 = course.getId();
 
         //point course object to a new instance of Course and check if the new values are updated
         int expected2 = 1;
@@ -110,7 +108,7 @@ class CourseTest {
         String expected1 = "Course{id: 0, title: 'default', description: 'default'}";
         String actual1 = course.toString(); //test should output default value
 
-        //point course object to a new instance of Course and check if the new values are updated in the String return
+        //validate value of course object
         String expected2 = "Course{id: 1, title: 'Chemistry', description: 'Chemistry Introduction'}";
         course = new Course(1, "Chemistry", "Chemistry Introduction");
         String actual2 = course.toString();

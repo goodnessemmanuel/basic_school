@@ -3,11 +3,13 @@ package school.model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * School model
+ */
+
 public class School
 {
-    /**
-     * School model
-     */
+
     private String name;
     private static List<Staff> staffs;
     private static List<Student> students;

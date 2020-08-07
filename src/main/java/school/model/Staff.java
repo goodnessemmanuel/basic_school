@@ -26,9 +26,10 @@ public abstract class Staff extends Person
         return staffLevel;
     }
 
-    //rank each staff according to their qualification
     public void setStaffLevel(StaffLevel staffLevel)
     {
-        this.staffLevel = staffLevel;
+        this.staffLevel = staffLevel; //rank staff
     }
+
+    public abstract int type(); //handles the type of staff
 }
